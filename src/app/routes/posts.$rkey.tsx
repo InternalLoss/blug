@@ -16,7 +16,7 @@ export const loader = async ({params}: LoaderFunctionArgs) => {
 
 export const meta: MetaFunction<typeof loader> = ({data}) => {
   return [
-    {title: `${data?.post.title} | Hailey's Cool Site`},
+    {title: `${data?.post.title} | Billy's Blog`},
     {
       name: 'description',
       content: `${data?.post.content?.split(' ').slice(0, 100).join(' ')}...`,
@@ -113,35 +113,7 @@ const markdownComponents: Partial<Components> = {
     <h5 className="text-base md:text-lg font-bold pt-4">{children}</h5>
   ),
   p: ({children}) => <p className="py-2 text-xl text-white">{children}</p>,
-  a: ({children, href}) => {
-    let urlp
-    try {
-      urlp = new URL(href as string)
-    } catch (e) {
-      // we'll render a link anyway
-    }
-
-    if (
-      !urlp ||
-      urlp.host !== 'bsky.app' ||
-      !urlp.href.endsWith('?embed=true')
-    ) {
-      return <Link href={href as string}>{children}</Link>
-    } else {
-      return (
-        <div className="flex justify-center">
-          <blockquote
-            className="bluesky-embed"
-            data-bluesky-uri={bskyLinkToAtUri(urlp.href)}
-          />
-          <script
-            async
-            src="https://embed.bsky.app/static/embed.js"
-            charset="utf-8"></script>
-        </div>
-      )
-    }
-  },
+  a: ({children, href}) => <Link href={href as string}>{children}</Link>,
   ul: ({children}) => <ul className="list-disc pl-4">{children}</ul>,
   ol: ({children}) => <ol className="list-decimal pl-4">{children}</ol>,
   li: ({children}) => <li className="py-1">{children}</li>,

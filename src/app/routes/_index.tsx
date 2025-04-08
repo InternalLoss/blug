@@ -22,11 +22,11 @@ export const loader = async () => {
 
 export const meta: MetaFunction = () => {
   return [
-    {title: "Hailey's Cool Site"},
+    {title: "Billy's Blog"},
     {
       name: 'description',
       content:
-        'react native, bluesky, nonsense, and maybe something serious (probably not)',
+        'Random ramblings about whatever\'s on my mind',
     },
   ]
 }
@@ -50,12 +50,12 @@ export default function Index() {
           ) : (
             <div className="w-32 h-32 bg-gray-300 rounded-full"></div>
           )}
-          <h1 className="text-5xl md:text-6xl font-bold">It's Hailey! 👋</h1>
+          <h1 className="text-5xl md:text-6xl font-bold">blog.billy.wales 👋</h1>
         </div>
-        <p className="text-2xl text-300">react native, bluesky, nonsense</p>
+        <p className="text-2xl text-300">Random ramblings about whatever's on my mind</p>
       </div>
       <div className="flex flex-col gap-4">
-        <h2 className="text-3xl font-bold">blog posts</h2>
+        <h2 className="text-3xl font-bold">Posts</h2>
         <ul className="list-none">
           {posts
             ?.sort(
@@ -75,7 +75,7 @@ function PostItem({post}: {post: WhtwndBlogEntryView}) {
     <li>
       <div className="flex">
         <p>
-          {new Date(post.createdAt).toLocaleDateString('en-US', {
+          {new Date(post.createdAt).toLocaleDateString('en-GB', {
             year: '2-digit',
             month: '2-digit',
             day: '2-digit',

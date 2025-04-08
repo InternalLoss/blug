@@ -14,11 +14,10 @@ import {Link} from './components/link'
 
 export const links: LinksFunction = () => [
   {rel: 'stylesheet', href: styles},
-  {rel: 'preconnect', href: 'https://fonts.googleapis.com'},
-  {rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true},
+  {rel: 'preconnect', href: 'https://fonts.bunny.net'},
   {
-    href: 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap',
-    rel: 'stylesheet',
+  href: 'https://fonts.bunny.net/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap',  
+  rel: 'stylesheet',
   },
 ]
 
@@ -30,7 +29,6 @@ export function Layout({children}: {children: React.ReactNode}) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
-        <script async src="https://embed.bsky.app/static/embed.js" />
       </head>
       <body className="flex flex-col h-screen justify-between">
         <div>
@@ -39,11 +37,11 @@ export function Layout({children}: {children: React.ReactNode}) {
               Home
             </NavLink>
             <NavLink
-              href="https://bsky.app/profile/haileyok.com"
+              href="https://bsky.app/profile/billy.wales"
               selected={false}>
               Bluesky
             </NavLink>
-            <NavLink href="https://github.com/haileyok" selected={false}>
+            <NavLink href="https://github.com/internalloss" selected={false}>
               GitHub
             </NavLink>
           </header>
@@ -51,7 +49,7 @@ export function Layout({children}: {children: React.ReactNode}) {
         </div>
         <footer>
           <p className="text-center text-100 py-4">
-            running on <Link href="https://atproto.com/">atprotocol</Link>
+            <Link href="https://github.com/haileyok/blug">blug by haileyok</Link>, running on <Link href="https://atproto.com/">ATProtocol</Link>
           </p>
         </footer>
         <ScrollRestoration />
